@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>IP119 - T5</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <div id="container">
+            <div class="primary-heading">Analog Stopwatch</div>
+            <div class="clock-wrapper">
+                <ul>
+                    <li><i>12</i></li>
+                    <li><i>1</i></li>
+                    <li><i>2</i></li>
+                    <li><i>3</i></li>
+                    <li><i>4</i></li>
+                    <li><i>5</i></li>
+                    <li><i>6</i></li>
+                    <li><i>7</i></li>
+                    <li><i>8</i></li>
+                    <li><i>9</i></li>
+                    <li><i>10</i></li>
+                    <li><i>11</i></li>
+                </ul>
+                <div class="hours-container">
+                    <div class="hours"></div>
+                </div>
+                <div class="minutes-container">
+                    <div class="minutes"></div>
+                </div>
+                <div class="seconds-container">
+                    <div class="seconds"></div>
+                </div>
+                <div class="milliseconds-container">
+                    <div class="milliseconds"></div>
+                </div>
+            </div>
+
+            <div class="time">
+                <p id="timer">00 : 00 : 00</p>
+            </div>
+
+            <div class="btn-container">
+                <a href="#" class="btn btn-start" id="start-btn">START</a>
+                <a href="#" class="btn btn-reset" id="reset-btn">RESET</a>
+            </div>
+            <div class="btn btn-lap" id="lap-btn">
+                <a href="#"><i class="fas fa-plus"></i></a>
+            </div>
+
+            <div class="laps-container">
+                <ul class="lap-list">
+                </ul>
+            </div>
+        </div>
+
+        <script src="./js/script.js"></script>
+    </body>
+</html>
