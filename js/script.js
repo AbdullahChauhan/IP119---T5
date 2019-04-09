@@ -17,12 +17,32 @@ let interval;
 let laps = [];
 let count = 0;
 
-document.addEventListener("DOMContentLoaded", getLaps);
+// load all event listeners
+loadEventListeners();
 
+function loadEventListeners() {
+    // DOM load event
+    document.addEventListener("DOMContentLoaded", getLaps);
+
+    // start button event
+    startBtn.addEventListener("click", start);
+
+    // reset button event
+    resetBtn.addEventListener("click", reset);
+
+    // add lap button event
+    lapBtn.addEventListener("click", addLap);
+
+    // remove lap event
+    lapList.addEventListener("click", removeLap);
+}
+
+// update time into UI
 function updateTimer() {
     document.getElementById("timer").innerHTML = format(hours) + " : " + format(minutes) + " : " + format(seconds);
 }
 
+// format time "0" OR- "00"
 function format(time) {
     return time > 9 ? time : "0" + time;
 }
@@ -32,6 +52,8 @@ function timer() {
     tickSeconds.style.animation = "rotate 60s infinite steps(60)";
     tickMinutes.style.animation = "rotate 3600s infinite steps(60)";
     tickHours.style.animation = "rotate 43200s infinite steps(60)";
+    
+    // update the current time values to UI
     updateTimer();
 
     milliSeconds += 10;
@@ -171,7 +193,4 @@ function removeLapFromLocalStorage(lapItem) {
     localStorage.setItem("laps", JSON.stringify(laps));
 }
 
-startBtn.addEventListener("click", start);
-resetBtn.addEventListener("click", reset);
-lapBtn.addEventListener("click", addLap);
-lapList.addEventListener("click", removeLap);
+

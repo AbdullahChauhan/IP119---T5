@@ -16,10 +16,9 @@
 body {
   font-family: "Open Sans", sans-serif;
   box-sizing: border-box;
-  padding: 4rem;
+  padding: 2rem;
   height: 100vh;
-  background-color: #ff3cac;
-  background-image: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+  background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
   /* width */
   /* Handle */
   /* Handle on hover */ }
@@ -29,16 +28,84 @@ body {
     background: #ccc; }
   body ::-webkit-scrollbar-thumb:hover {
     background: #555; }
+  @media (max-width: 480px) {
+    body {
+      padding: 0; } }
+
+.clock-hands {
+  height: 55%;
+  width: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff; }
+  .clock-hands li {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 50% 100%; }
+    .clock-hands li i {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%); }
+    .clock-hands li:nth-child(2) {
+      transform: rotate(30deg); }
+      .clock-hands li:nth-child(2) i {
+        transform: translateX(-50%) rotate(-30deg); }
+    .clock-hands li:nth-child(3) {
+      transform: rotate(60deg); }
+      .clock-hands li:nth-child(3) i {
+        transform: translateX(-50%) rotate(-60deg); }
+    .clock-hands li:nth-child(4) {
+      transform: rotate(90deg); }
+      .clock-hands li:nth-child(4) i {
+        transform: translateX(-50%) rotate(-90deg); }
+    .clock-hands li:nth-child(5) {
+      transform: rotate(120deg); }
+      .clock-hands li:nth-child(5) i {
+        transform: translateX(-50%) rotate(-120deg); }
+    .clock-hands li:nth-child(6) {
+      transform: rotate(150deg); }
+      .clock-hands li:nth-child(6) i {
+        transform: translateX(-50%) rotate(-150deg); }
+    .clock-hands li:nth-child(7) {
+      transform: rotate(180deg); }
+      .clock-hands li:nth-child(7) i {
+        transform: translateX(-50%) rotate(-180deg); }
+    .clock-hands li:nth-child(8) {
+      transform: rotate(210deg); }
+      .clock-hands li:nth-child(8) i {
+        transform: translateX(-50%) rotate(-210deg); }
+    .clock-hands li:nth-child(9) {
+      transform: rotate(240deg); }
+      .clock-hands li:nth-child(9) i {
+        transform: translateX(-50%) rotate(-240deg); }
+    .clock-hands li:nth-child(10) {
+      transform: rotate(270deg); }
+      .clock-hands li:nth-child(10) i {
+        transform: translateX(-50%) rotate(-270deg); }
+    .clock-hands li:nth-child(11) {
+      transform: rotate(300deg); }
+      .clock-hands li:nth-child(11) i {
+        transform: translateX(-50%) rotate(-300deg); }
+    .clock-hands li:last-child {
+      transform: rotate(330deg); }
+      .clock-hands li:last-child i {
+        transform: translateX(-50%) rotate(-330deg); }
 
 .btn {
   padding: 8px 32px;
   border-radius: 32px;
   background-color: #fff;
-  font-size: .85rem;
+  font-size: 0.85rem;
   color: #000;
   font-weight: bold;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
-  transition: all .2s; }
+  transition: all 0.2s; }
   .btn:hover {
     transform: translateY(-2px); }
   .btn:active {
@@ -60,91 +127,32 @@ body {
   width: 350px;
   height: 650px;
   margin: auto;
-  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 3rem 4rem rgba(0, 0, 0, 0.5);
-  border: 5px solid #fff;
+  border: 4px solid #fff;
+  transition: all .5s;
   display: flex;
   flex-direction: column;
   align-items: center; }
+  @media (max-width: 480px) {
+    #container {
+      width: 100%;
+      height: 100%;
+      border: none; } }
   #container .primary-heading {
     width: 100%;
-    background-color: rebeccapurple;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     font-weight: 700;
     font-size: 1.2rem;
     text-transform: uppercase;
     text-align: center; }
   #container .clock-wrapper {
-    margin: 22px 0;
+    margin: 24px 0;
     width: 175px;
     height: 175px;
     border-radius: 50%;
     position: relative; }
-    #container .clock-wrapper ul {
-      height: 55%;
-      width: 0;
-      position: absolute;
-      bottom: 50%;
-      left: 50%;
-      font-size: 1rem;
-      font-weight: bold;
-      color: #fff; }
-      #container .clock-wrapper ul li {
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform-origin: 50% 100%; }
-        #container .clock-wrapper ul li i {
-          position: absolute;
-          top: 0;
-          left: 50%;
-          transform: translateX(-50%); }
-        #container .clock-wrapper ul li:nth-child(2) {
-          transform: rotate(30deg); }
-          #container .clock-wrapper ul li:nth-child(2) i {
-            transform: translateX(-50%) rotate(-30deg); }
-        #container .clock-wrapper ul li:nth-child(3) {
-          transform: rotate(60deg); }
-          #container .clock-wrapper ul li:nth-child(3) i {
-            transform: translateX(-50%) rotate(-60deg); }
-        #container .clock-wrapper ul li:nth-child(4) {
-          transform: rotate(90deg); }
-          #container .clock-wrapper ul li:nth-child(4) i {
-            transform: translateX(-50%) rotate(-90deg); }
-        #container .clock-wrapper ul li:nth-child(5) {
-          transform: rotate(120deg); }
-          #container .clock-wrapper ul li:nth-child(5) i {
-            transform: translateX(-50%) rotate(-120deg); }
-        #container .clock-wrapper ul li:nth-child(6) {
-          transform: rotate(150deg); }
-          #container .clock-wrapper ul li:nth-child(6) i {
-            transform: translateX(-50%) rotate(-150deg); }
-        #container .clock-wrapper ul li:nth-child(7) {
-          transform: rotate(180deg); }
-          #container .clock-wrapper ul li:nth-child(7) i {
-            transform: translateX(-50%) rotate(-180deg); }
-        #container .clock-wrapper ul li:nth-child(8) {
-          transform: rotate(210deg); }
-          #container .clock-wrapper ul li:nth-child(8) i {
-            transform: translateX(-50%) rotate(-210deg); }
-        #container .clock-wrapper ul li:nth-child(9) {
-          transform: rotate(240deg); }
-          #container .clock-wrapper ul li:nth-child(9) i {
-            transform: translateX(-50%) rotate(-240deg); }
-        #container .clock-wrapper ul li:nth-child(10) {
-          transform: rotate(270deg); }
-          #container .clock-wrapper ul li:nth-child(10) i {
-            transform: translateX(-50%) rotate(-270deg); }
-        #container .clock-wrapper ul li:nth-child(11) {
-          transform: rotate(300deg); }
-          #container .clock-wrapper ul li:nth-child(11) i {
-            transform: translateX(-50%) rotate(-300deg); }
-        #container .clock-wrapper ul li:last-child {
-          transform: rotate(330deg); }
-          #container .clock-wrapper ul li:last-child i {
-            transform: translateX(-50%) rotate(-330deg); }
     #container .clock-wrapper::before {
       background-color: rgba(255, 255, 255, 0.25);
       border-radius: 50%;
@@ -163,8 +171,8 @@ body {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 8px;
-      height: 8px; }
+      width: 12px;
+      height: 12px; }
     #container .clock-wrapper .minutes-container,
     #container .clock-wrapper .hours-container,
     #container .clock-wrapper .seconds-container,
@@ -177,36 +185,36 @@ body {
     #container .clock-wrapper .hours-container .hours {
       background: #fff;
       height: 20%;
-      left: 48.75%;
       position: absolute;
       top: 30%;
+      left: 48.75%;
       transform-origin: 50% 100%;
       width: 2.5%;
-      border-radius: 16px; }
+      border-radius: 8px; }
     #container .clock-wrapper .minutes-container .minutes {
       background: #fff;
       height: 40%;
-      left: 49%;
       position: absolute;
       top: 10%;
+      left: 49%;
       transform-origin: 50% 100%;
       width: 2%;
-      border-radius: 16px; }
+      border-radius: 8px; }
     #container .clock-wrapper .seconds-container .seconds {
       background: #fff;
       height: 45%;
-      left: 49.5%;
       position: absolute;
       top: 14%;
-      transform-origin: 50% 80%;
-      width: 1%;
-      border-radius: 8px; }
+      left: 49%;
+      transform-origin: 50% 50%;
+      width: 2%;
+      border-radius: 50%; }
     #container .clock-wrapper .milliseconds-container .milliseconds {
       background: #fff;
       height: 3%;
-      left: 49.5%;
       position: absolute;
       top: 30%;
+      left: 49.5%;
       transform-origin: 50% 80%;
       width: 3%;
       border-radius: 50%; }
@@ -261,7 +269,7 @@ body {
           margin-bottom: 8px; }
         #container .laps-container ul li a {
           cursor: pointer;
-          transition: all .1s; }
+          transition: all 0.1s; }
           #container .laps-container ul li a:hover {
             transform: scale(1.2); }
 

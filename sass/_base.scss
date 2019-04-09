@@ -13,15 +13,13 @@ body {
     font-family: "Open Sans", sans-serif;
 
     box-sizing: border-box;
-    padding: 4rem;
+    padding: 2rem;
     height: 100vh;
-    background-color: #ff3cac;
-    background-image: linear-gradient(
-        225deg,
-        #ff3cac 0%,
-        #784ba0 50%,
-        #2b86c5 100%
-    );
+    background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
 
     @include customScrollbar();
+
+    @media (max-width: 480px) {
+        padding: 0;
+    }
 }

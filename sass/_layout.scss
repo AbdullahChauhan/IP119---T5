@@ -3,19 +3,25 @@
     width: 350px;
     height: 650px;
     margin: auto;
-    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 3rem 4rem rgba($color-black, 0.5);
-    border: 5px solid $color-white;
+    border: $small-2 solid $color-white;
+    transition: all .5s;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    @media (max-width: 480px) {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
     .primary-heading {
         width: 100%;
-        background-color: rebeccapurple;
-        color: $color-white;
+        background-color: $color-white;
+        color: $color-black;
         font-weight: 700;
         font-size: 1.2rem;
         text-transform: uppercase;
@@ -23,104 +29,11 @@
     }
 
     .clock-wrapper {
-        margin: 22px 0;
+        margin: $large-2 0;
         width: 175px;
         height: 175px;
         border-radius: 50%;
         @include relative();
-
-        ul {
-            height: 55%;
-            width: 0;
-            position: absolute;
-            bottom: 50%;
-            left: 50%;
-            font-size: 1rem;
-            font-weight: bold;
-            color: $color-white;
-
-            li {
-                height: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                transform-origin: 50% 100%;
-
-                i {
-                    position: absolute;
-                    top: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
-                }
-
-                &:nth-child(2) {
-                    transform: rotate(30deg);
-                    i {
-                        transform: translateX(-50%) rotate(-30deg);
-                    }
-                }
-                &:nth-child(3) {
-                    transform: rotate(60deg);
-                    i {
-                        transform: translateX(-50%) rotate(-60deg);
-                    }
-                }
-                &:nth-child(4) {
-                    transform: rotate(90deg);
-                    i {
-                        transform: translateX(-50%) rotate(-90deg);
-                    }
-                }
-                &:nth-child(5) {
-                    transform: rotate(120deg);
-                    i {
-                        transform: translateX(-50%) rotate(-120deg);
-                    }
-                }
-                &:nth-child(6) {
-                    transform: rotate(150deg);
-                    i {
-                        transform: translateX(-50%) rotate(-150deg);
-                    }
-                }
-                &:nth-child(7) {
-                    transform: rotate(180deg);
-                    i {
-                        transform: translateX(-50%) rotate(-180deg);
-                    }
-                }
-                &:nth-child(8) {
-                    transform: rotate(210deg);
-                    i {
-                        transform: translateX(-50%) rotate(-210deg);
-                    }
-                }
-                &:nth-child(9) {
-                    transform: rotate(240deg);
-                    i {
-                        transform: translateX(-50%) rotate(-240deg);
-                    }
-                }
-                &:nth-child(10) {
-                    transform: rotate(270deg);
-                    i {
-                        transform: translateX(-50%) rotate(-270deg);
-                    }
-                }
-                &:nth-child(11) {
-                    transform: rotate(300deg);
-                    i {
-                        transform: translateX(-50%) rotate(-300deg);
-                    }
-                }
-                &:last-child {
-                    transform: rotate(330deg);
-                    i {
-                        transform: translateX(-50%) rotate(-330deg);
-                    }
-                }
-            }
-        }
 
         &::before {
             background-color: rgba($color-white, 0.25);
@@ -138,31 +51,25 @@
             content: "";
             @include center();
             transform: translate(-50%, -50%);
-            width: 8px;
-            height: 8px;
+            width: 12px;
+            height: 12px;
         }
 
         .minutes-container,
         .hours-container,
         .seconds-container,
         .milliseconds-container {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
+            @include absolute($top: 0, $right: 0, $bottom: 0, $left: 0);
         }
 
         .hours-container {
             .hours {
                 background: $color-white;
                 height: 20%;
-                left: 48.75%;
-                position: absolute;
-                top: 30%;
+                @include absolute($top: 30%, $left: 48.75%);
                 transform-origin: 50% 100%;
                 width: 2.5%;
-                border-radius: 16px;
+                border-radius: $medium;
             }
         }
 
@@ -170,12 +77,10 @@
             .minutes {
                 background: $color-white;
                 height: 40%;
-                left: 49%;
-                position: absolute;
-                top: 10%;
+                @include absolute($top: 10%, $left: 49%);
                 transform-origin: 50% 100%;
                 width: 2%;
-                border-radius: 16px;
+                border-radius: $medium;
             }
         }
 
@@ -183,12 +88,10 @@
             .seconds {
                 background: $color-white;
                 height: 45%;
-                left: 49.5%;
-                position: absolute;
-                top: 14%;
-                transform-origin: 50% 80%;
-                width: 1%;
-                border-radius: 8px;
+                @include absolute($top: 14%, $left: 49%);
+                transform-origin: 50% 50%;
+                width: 2%;
+                border-radius: 50%;
             }
         }
 
@@ -196,9 +99,7 @@
             .milliseconds {
                 background: $color-white;
                 height: 3%;
-                left: 49.5%;
-                position: absolute;
-                top: 30%;
+                @include absolute($top: 30%, $left: 49.5%);
                 transform-origin: 50% 80%;
                 width: 3%;
                 border-radius: 50%;
@@ -237,7 +138,7 @@
     }
 
     .btn-container {
-        margin: 16px 0;
+        margin: $large 0;
         z-index: 1;
         display: flex;
         align-items: center;
@@ -252,23 +153,23 @@
         overflow: auto;
 
         ul {
-            padding: 8px;
+            padding: $medium;
             text-align: center;
 
             li {
-                padding: 4px;
+                padding: $small-2;
                 border: 1px solid $color-gray;
                 display: flex;
                 color: $color-white;
                 justify-content: space-evenly;
 
                 &:not(:last-child) {
-                    margin-bottom: 8px;
+                    margin-bottom: $medium;
                 }
 
                 a {
                     cursor: pointer;
-                    transition: all .1s;
+                    transition: all 0.1s;
 
                     &:hover {
                         transform: scale(1.2);
