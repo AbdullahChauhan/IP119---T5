@@ -6,7 +6,7 @@
     overflow: hidden;
     box-shadow: 0 3rem 4rem rgba($color-black, 0.5);
     border: $small-2 solid $color-white;
-    transition: all .5s;
+    transition: all 0.5s;
 
     display: flex;
     flex-direction: column;
@@ -18,14 +18,22 @@
         border: none;
     }
 
-    .primary-heading {
+    .primary-heading,
+    .secondary-heading {
         width: 100%;
         background-color: $color-white;
         color: $color-black;
-        font-weight: 700;
+        text-align: center;
+    }
+
+    .primary-heading {
         font-size: 1.2rem;
         text-transform: uppercase;
-        text-align: center;
+        font-weight: 700;
+    }
+
+    .secondary-heading {
+        font-size: 0.8rem;
     }
 
     .clock-wrapper {
